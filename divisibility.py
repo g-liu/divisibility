@@ -9,31 +9,26 @@ class DivisibilityTester:
 		return n % by == 0
 
 	def run_divisibility_check(self):
-		for i in range(1, 1000):
-			print(i)
+		for i in range(1, 480000):
+			if i % 1000 == 0:
+				print(i)
 			self.divisibility_dict[i] = set([1, i])
 
-			j = int(math.ceil(math.sqrt(i)))
-			
+			j = int(math.ceil(i / 2))
 
 			while j >= 2:
-				is_already_known_divisor = j in self.divisibility_dict[i]
-				if not is_already_known_divisor and self.is_divisible(i, j):
+				if self.is_divisible(i, j):
 					# check our divisibility_dict to see if we have already calculated the factors for `j`
-					try:
-						factors_of_j = self.divisibility_dict[j]
+					factors_of_j = self.divisibility_dict[j]
 
-						for factor in factors_of_j:
-							self.divisibility_dict[i].add(factor)
-							self.divisibility_dict[i].add(int(i/factor))
+					self.divisibility_dict[i] |= factors_of_j
 
-					except KeyError as ke:
-						self.divisibility_dict[i].add(j)
-						self.divisibility_dict[i].add(int(i/j))
+					for factor in factors_of_j:
+						self.divisibility_dict[i].add(int(i/factor))
 
-				j -= 1
-
-			self.divisibility_dict[i]
+					j = int(math.ceil(j / 2))
+				else: 
+					j -= 1
 
 		with open('factors.txt', 'w') as f:
 			pp = pprint.PrettyPrinter(indent=4,stream=f)
