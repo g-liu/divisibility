@@ -5,6 +5,7 @@ import pprint
 # WHAT THE FUCK IS WRONG WITH YOUR SSH FUCKING SHIT GITHUB???????????????
 # HEY GITHUB WATH THE ACTUAL FUCK?
 # FUCK YOU!!!!!!!!
+# why the FUCK can  i only commit here??
 class DivisibilityTester:
 	divisibility_dict = dict()
 
