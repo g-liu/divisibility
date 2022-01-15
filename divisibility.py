@@ -1,7 +1,8 @@
 import math
 import pprint
 
-
+# comment:
+# WHAT THE FUCK IS WRONG WITH YOUR SSH FUCKING SHIT GITHUB???????????????
 class DivisibilityTester:
 	divisibility_dict = dict()
 
