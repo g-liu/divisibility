@@ -4,6 +4,7 @@ import pprint
 # comment:
 # WHAT THE FUCK IS WRONG WITH YOUR SSH FUCKING SHIT GITHUB???????????????
 # HEY GITHUB WATH THE ACTUAL FUCK?
+# FUCK YOU!!!!!!!!
 class DivisibilityTester:
 	divisibility_dict = dict()
 
